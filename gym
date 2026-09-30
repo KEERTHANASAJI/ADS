@@ -1,0 +1,51 @@
+#include<stdio.h>
+struct member{
+  int mem_id;
+  char name[20];
+  float weight;
+  int days;
+};
+
+int main(){
+  struct member arr[50];
+  int n;
+  printf("Gym Fittness Tracker");
+  printf("Enter the details of members to be added\n");
+  printf("Enter the no.of members to be addded:\n");
+  scanf("%d",&n);
+  for(int i=0;i<n;i++){
+    printf("Enter the member id\n");
+    scanf("%d",&arr[i].mem_id);
+    printf("Enter the name of member");
+    scanf("%s",arr[i].name);
+    printf("Enter the weight");
+    scanf("%f",&arr[i].weight);
+    printf("Enter noof days since last workout\n");
+    scanf("%d",&arr[i].days);}
+  display(arr);
+  filterinactive(arr);
+  return 0;
+}
+  void display(struct member arr[]){
+    for(int i=0;i<50;i++){
+      printf("Details of all members");
+      printf("MemberId:%d",arr[i].mem_id);
+      printf("Name:%s,arr[i].name);
+      printf("Weight:%f",arr[i].weight);
+      printf("Days:%d",arr[i].days);
+    }
+  }
+void filterinactive(struct member arr[]){
+  int min=7;
+  for(int i=0;i<50;i++){
+        for(int j=7;j>arr[i].days;j++){
+          printf("MemberId:%d",arr(i).mem_id);
+          printf("Name:%s",arr(i).name);
+
+         }
+  }
+
+
+
+      
+

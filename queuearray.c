@@ -1,0 +1,191 @@
+#include<stdio.h>
+#define SIZE 5
+int q[5],rear=-1,front=-1;
+void enqueue(){
+  int data;
+  if(rear==SIZE-1){
+    printf("overflow\n");
+    return ;
+  }
+  else{
+    printf("enter the data\n");
+    scanf("%d",&data);
+    if(front==-1&&rear==-1)
+      front++;
+    rear++;
+    q[rear]=data;
+  }
+}
+void dequeue(){
+  if(front==-1 && rear==-1){
+    printf("underflow\n");
+    return;
+  }
+  else{
+    printf("element removed %d\n",q[front++]);
+    if(front>rear){
+      front=-1;
+      rear=-1;
+    }
+  }
+}
+void display(){
+  if(rear==-1)
+    printf("Queue Empty\n");
+  else{
+    for(int i=front;i<=rear;i++)
+      printf("%d\t",q[i]);
+  }
+}
+int main(){
+  int c;
+  
+  do{
+        printf("\nQueue Array\n");
+        printf("1.enqueue\n2.dequeue\n3.display\n4.exit\n");
+        scanf("%d",&c);
+        switch(c){
+          case 1:
+                enqueue();
+                break;
+          case 2:
+                dequeue();
+                break;
+          case 3:
+                display();
+                break;
+          case 4:
+                printf("exit\n");
+                 break;
+          default:
+                printf("invalid");
+                break;
+        }                
+  }while(c!=4);
+return 0;
+}
+/*Output
+Queue Array
+1.enqueue
+2.dequeue
+3.display
+4.exit
+1
+enter the data
+10
+
+Queue Array
+1.enqueue
+2.dequeue
+3.display
+4.exit
+1
+enter the data
+20
+
+Queue Array
+1.enqueue
+2.dequeue
+3.display
+4.exit
+1
+enter the data
+30
+
+Queue Array
+1.enqueue
+2.dequeue
+3.display
+4.exit
+1
+enter the data
+40
+
+Queue Array
+1.enqueue
+2.dequeue
+3.display
+4.exit
+1
+enter the data
+50
+
+Queue Array
+1.enqueue
+2.dequeue
+3.display
+4.exit
+1
+overflow
+
+Queue Array
+1.enqueue
+2.dequeue
+3.display
+4.exit
+2
+element removed 10
+
+Queue Array
+1.enqueue
+2.dequeue
+3.display
+4.exit
+3
+20      30      40      50
+Queue Array
+1.enqueue
+2.dequeue
+3.display
+4.exit
+2
+element removed 20
+
+Queue Array
+1.enqueue
+2.dequeue
+3.display
+4.exit
+2
+element removed 30
+
+Queue Array
+1.enqueue
+2.dequeue
+3.display
+4.exit
+2
+element removed 40
+
+Queue Array
+1.enqueue
+2.dequeue
+3.display
+4.exit
+2
+element removed 50
+
+Queue Array
+1.enqueue
+2.dequeue
+3.display
+4.exit
+2
+underflow
+
+Queue Array
+1.enqueue
+2.dequeue
+3.display
+4.exit
+3
+Queue Empty
+
+Queue Array
+1.enqueue
+2.dequeue
+3.display
+4.exit
+4
+exit
+ */
