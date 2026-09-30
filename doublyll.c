@@ -1,3 +1,32 @@
+/*
+    Algorithm
+
+1. **Start.**
+2. Define the structure `Node` with `data`, `next`, and `prev`.
+3. Initialize `head` to `NULL`.
+4. Create a new node using dynamic memory allocation.
+5. Store the data in the new node.
+6. Set `next` and `prev` of the new node to `NULL`.
+7. Display the menu and read the choice.
+8. For insertion at beginning, create a node and link it before `head`.
+9. Update the `prev` pointer of the old head and make the new node the head.
+10. For insertion at end, traverse to the last node and link the new node after it.
+11. Update the `next` and `prev` pointers of the last and new nodes.
+12. For insertion at a position, traverse to the required position.
+13. Insert the new node and update its `next` and `prev` pointers.
+14. For deletion at beginning, move `head` to the next node.
+15. Set the new head's `prev` to `NULL` and free the deleted node.
+16. For deletion at end, traverse to the last node.
+17. Set the previous node's `next` to `NULL` and free the last node.
+18. For deletion at a position, traverse to the required node.
+19. Connect the previous and next nodes and free the selected node.
+20. For reverse display, traverse to the last node.
+21. Display the elements by moving through the `prev` pointers.
+22. Display an appropriate message if the list is empty or the position is invalid.
+23. Repeat the menu operations until the user selects **Exit**.
+24. **Stop.**
+
+    */
 #include <stdio.h>
 #include <stdlib.h>
 struct Node {
